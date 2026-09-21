@@ -47,7 +47,13 @@ function btnSearchByIdStudentOnAction() {
     document.getElementById("txtStudentAddress").value = student.studentAddress;
 }
 function btnUpdateByIdStudentOnAction() {
-    alert("Update by Id Student Button Clicked");
+    let studentList = JSON.parse(localStorage.getItem("studentList"));
+    let studentId = document.getElementById("txtStudentId").value;
+    let studentIndex = studentList.findIndex(student => {
+        return student.id === studentId;
+    });
+    console.log(studentIndex);
+    
 }
 function btnDeleteByIdStudentOnAction() {
     alert("Delete by Id Student Button Clicked");
@@ -56,6 +62,17 @@ function btnClearStorageOnAction() {
     localStorage.clear();
 }
 function btnLoadAllStudentsOnAction() {
-    alert("Load All Students Button Clicked");
+    let body="";
+    let studentList = JSON.parse(localStorage.getItem("studentList"));
+    studentList.forEach(student => {
+        body += `<tr>
+                    <td>${student.studentId}</td>
+                    <td>${student.studentName}</td>
+                    <td>${student.studentAge}</td>
+                    <td>${student.studentAddress}</td>
+                </tr>`;
+    });
+    document.getElementById("tblStudent").innerHTML = body;
+    //alert("Load All Students Button Clicked");
 }
 
