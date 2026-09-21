@@ -23,22 +23,39 @@ console.log(cusName);
 
 */
 
-function btnAddStudentOnAction(){
-    console.log("Add Student Button Clicked");
+const studentList = [];
+
+function btnAddStudentOnAction() {
+    let student = {
+        studentId: document.getElementById("txtStudentId").value,
+        studentName: document.getElementById("txtStudentName").value,
+        studentAge: document.getElementById("txtStudentAge").value,
+        studentAddress: document.getElementById("txtStudentAddress").value
+    }
+    console.log(student);
+    studentList.push(student);
+    alert("Student added successfully..");
+    localStorage.setItem("studentList", JSON.stringify(studentList));
 }
-function btnSearchByIdStudentOnAction(){
-    console.log("Search by Id Student Button Clicked");
-}   
-function btnUpdateByIdStudentOnAction(){
-    console.log("Update by Id Student Button Clicked");
-}   
-function btnDeleteByIdStudentOnAction(){
-    console.log("Delete by Id Student Button Clicked");
-}   
-function btnClearStorageOnAction(){
-    console.log("Clear Storage Button Clicked");
-}   
-function btnLoadAllStudentsOnAction(){
-    console.log("Load All Students Button Clicked");
-}   
+function btnSearchByIdStudentOnAction() {
+    let studentList = JSON.parse(localStorage.getItem("studentList"));
+        let student = studentList.find(student => {
+            return student.studentId === document.getElementById("txtStudentId").value
+        });
+    document.getElementById("txtStudentName").value = student.studentName;
+    document.getElementById("txtStudentAge").value = student.studentAge;
+    document.getElementById("txtStudentAddress").value = student.studentAddress;
+}
+function btnUpdateByIdStudentOnAction() {
+    alert("Update by Id Student Button Clicked");
+}
+function btnDeleteByIdStudentOnAction() {
+    alert("Delete by Id Student Button Clicked");
+}
+function btnClearStorageOnAction() {
+    localStorage.clear();
+}
+function btnLoadAllStudentsOnAction() {
+    alert("Load All Students Button Clicked");
+}
 
