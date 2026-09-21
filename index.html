@@ -7,18 +7,20 @@
 </head>
 <body>
     <h1>Student management System</h1>
-    <input type="text" id="id" placeholder="Enter id">
-    <input type="text" id="name" placeholder="Enter name">
-    <input type="text" id="age" placeholder="Enter age">    
-    <input type="text" id="address" placeholder="Enter address">
+    <input type="text" id="txtStudentId" placeholder="Enter id">
+    <input type="text" id="txtStudentName" placeholder="Enter name">
+    <input type="text" id="txtStudentAge" placeholder="Enter age">    
+    <input type="text" id="txtStudentAddress" placeholder="Enter address">
 
     <hr>
-    <button id="add">Add Student</button>
-    <button id="searchbyId">Search by Id</button>
-    <button id="deletebyId">Delete by Id</button>
-    <button id="updatebyId">Update by Id</button>
-    <button id="Clear Storage">Clear Storage</button>
-    <button id="showAll">Load Table</button>
+
+
+    <input type="button" id="add" value="Add Student" onclick="btnAddStudentOnAction()">
+    <input type="button" id="searchbyId" value="Search by Id" onclick="btnSearchByIdStudentOnAction()">
+    <input type="button" id="deletebyId" value="Delete by Id" onclick="btnDeleteByIdStudentOnAction()">
+    <input type="button" id="updatebyId" value="Update by Id" onclick="btnUpdateByIdStudentOnAction()">
+    <input type="button" id="Clear Storage" value="Clear Storage" onclick="btnClearStorageOnAction()">
+    <input type="button" id="showAll" value="Load Table" onclick="btnLoadAllStudentsOnAction()">    
     <script src="app.js"></script>
 </body>
 </html>

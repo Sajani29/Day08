@@ -1,4 +1,4 @@
-console.log("Hii");
+/*console.log("Hii");
 
 localStorage.setItem("name", "John Doe");
 localStorage.setItem("name", "siri");
@@ -16,11 +16,29 @@ let customer = {
 localStorage.setItem("customer", JSON.stringify(customer));
 
 localStorage.getItem("customer",JSON.parse(customer))
-/*
+
 localStorage.setItem("name", "Jjjjj");
 let cusName = localStorage.getItem("name");
 console.log(cusName);
 
 */
 
+function btnAddStudentOnAction(){
+    console.log("Add Student Button Clicked");
+}
+function btnSearchByIdStudentOnAction(){
+    console.log("Search by Id Student Button Clicked");
+}   
+function btnUpdateByIdStudentOnAction(){
+    console.log("Update by Id Student Button Clicked");
+}   
+function btnDeleteByIdStudentOnAction(){
+    console.log("Delete by Id Student Button Clicked");
+}   
+function btnClearStorageOnAction(){
+    console.log("Clear Storage Button Clicked");
+}   
+function btnLoadAllStudentsOnAction(){
+    console.log("Load All Students Button Clicked");
+}   
 
